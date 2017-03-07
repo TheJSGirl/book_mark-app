@@ -3,8 +3,8 @@ document.getElementById('myForm').addEventListener('submit', saveBookmark);
 
 function saveBookmark(e){
 
-    let sitename = document.getElementById('siteName').value;
-    let siteurl = document.getElementById('siteUrl').value;
+    var siteName = document.getElementById('siteName').value;
+    var siteUrl = document.getElementById('siteUrl').value;
 
     var bookmark = {
         name : siteName,
@@ -13,11 +13,11 @@ function saveBookmark(e){
     
 
     //local storage
-   if(localStorage.getItem('bookmark') === null){
+   if(localStorage.getItem('bookmarks') === null){
        //init array
-       let bookmarks = [];
+       var bookmarks = [];
        //add to array
-       bookmarks.push('bookmark');
+       bookmarks.push(bookmark);
 
        //set to localStorage
        localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
